@@ -1,0 +1,48 @@
+
+/*
+		Humza Khawar
+		Replacing even number by "0"
+		and odd number by "1"
+*/
+#include<stdio.h>
+int main() 
+{
+	int  array[12] = { 0 };		//initialization of array
+
+		for (int i = 0; i < 12; i++)	//loop to take input
+		{
+			printf("\nEnter Number %d : ",i+1);	//taking numbers input in array
+			scanf("%d", &array[i]);
+		}
+
+	printf("\n Array Entries:\n");
+
+		for (int i = 0; i < 12; i++)	//loop to print array entries
+		{
+			printf("\t%2d", array[i]);	
+		}
+
+		for (int i = 0; i < 12; i++)	//loop to replace numbers
+		{
+			if (array[i]%2==0)
+			{
+				array[i] = 0;	//even number is replaced by 0
+			}
+			else
+			{
+				array[i] = 1;	//odd number is replaced by 1
+			}
+		}
+
+	printf("\n Array Entries After replacing:\n");
+
+		for (int i = 0; i < 12; i++)	//loop to print array entries after replacing
+		{
+			printf("\t%2d", array[i]);
+		}
+		printf("\n");
+	
+	return 0;
+}
+
+
