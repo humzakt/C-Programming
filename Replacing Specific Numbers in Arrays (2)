@@ -1,0 +1,57 @@
+/*
+		Humza Khawar 
+		Replacing prime numbers by "-1"
+*/
+#include<stdio.h>
+int PrimeChecker(int);//function to check for prime numbers by calculating factors
+int main() 
+{
+	int  array[12] = { 0 };		//initialization of array
+
+		for (int i = 0; i < 12; i++)	//loop to take input
+		{
+			printf("\nEnter Number %d : ",i+1);	//taking numbers input in array
+			scanf("%d", &array[i]);
+		}
+
+	printf("\n Array Entries:\n");
+
+		for (int i = 0; i < 12; i++)	//loop to print array entries
+		{
+			printf("\t%2d", array[i]);	
+		}
+
+		for (int i = 0; i < 12; i++)	//loop to replace prime numbers by "-1"
+		{
+			if (PrimeChecker(array[i]) == 2)	//checks the factors of the number
+			{
+				array[i] = -1;	//replaces prime number by -1
+			}
+
+		}
+
+	printf("\n Array Entries After replacing:\n");
+
+		for (int i = 0; i < 12; i++)	//loop to print array entries after replacing
+		{
+			printf("\t%2d", array[i]);
+		}
+		printf("\n");
+	
+	return 0;
+}
+
+PrimeChecker(int number) {
+
+	int fact=0;
+	for (int i = 1; i <=number; i++)
+	{
+		if (number % i == 0)
+		{
+			fact++;		//calculates factors of the number
+		}
+
+	}
+	return fact;
+
+}
