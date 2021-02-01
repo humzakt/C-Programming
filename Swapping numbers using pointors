@@ -1,0 +1,44 @@
+
+/*
+		Humza Khawar
+		Number swapper
+		*/
+
+#include<stdio.h>
+
+void Swapper(int*, int*, int*, int*, int* );//swaps the numbers
+
+int main() 
+{
+	int num1,num2,num3,num4,num5;
+
+	printf("\n Enter num1 : ");//input number
+	scanf_s("%d", &num1);
+	printf("\n Enter num2 : ");//input number
+	scanf_s("%d", &num2);
+	printf("\n Enter num3 : ");//input number
+	scanf_s("%d", &num3);
+	printf("\n Enter num4 : ");//input number
+	scanf_s("%d", &num4);
+	printf("\n Enter num5 : ");//input number
+	scanf_s("%d", &num5);
+	
+	printf("Numbers before Swapping Positions \n \t %d , %d , %d , %d , %d \n", num1, num2, num3, num4, num5); //shows numbers before swapping
+	Swapper(&num1, &num2, &num3, &num4, &num5);//swaps the numbers using pointors
+	printf("Numbers after Swapping Positions \n \t %d , %d , %d , %d , %d \n", num1, num2, num3, num4, num5);//displays the numbers after swapping
+	return 0;
+}
+
+
+void Swapper(int* num1, int* num2, int* num3, int* num4, int* num5)//void function to swap numbers
+{
+
+	int temp;//temporary variable
+	temp = *num5;  //swapping numbers in cyclic order
+	*num5 = *num4;
+	*num4 = *num3;
+	*num3 = *num2;
+	*num2 = *num1;
+	*num1 = temp;
+	
+}
