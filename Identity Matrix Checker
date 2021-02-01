@@ -1,0 +1,72 @@
+
+/*	
+		Humza KHawar 
+		Lab Task
+		Comparing Matrix with identity matrix
+*/
+
+#include<stdio.h>
+
+
+
+void main()
+{
+	//initialization of array
+
+	int matrix1[10][10] = { 0 },  size, flag = 0;
+
+
+	//inputing size
+
+	printf("\n Enter he size of the Square Matrix: ");
+	scanf("%d", &size);
+
+	//inputing elements of matrix
+	printf("\nMatrix 1");
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				printf("\nEnter Number [%d] [%d]: ", 1+i,1+ j);
+				scanf("%d", &matrix1[i][j]);
+			}
+		}
+
+
+	//printing the matrix
+	printf("\nYour Matrix 1:\n");
+
+		for(int i = 0; i < size; i++)
+		{
+			printf("\n |");
+			for (int j = 0; j < size; j++)
+			{
+				printf(" %3d ", matrix1[i][j]);
+			}
+			printf(" |");
+		}
+	
+	//checking each element of matrix 
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				if ( ((matrix1[i][j] != 1) && (i==j)) || ((matrix1[i][j] != 0) && (i != j))) 
+				{
+					flag = 1; //flag is increased to 1 if any element is not equal to identity matrix
+				}
+			}
+		}
+
+	if (flag ==1)
+	{
+		printf("\n\nMatrix is NOT Identiy Matrix\n\n");
+	}
+	else
+	{
+		printf("\n\nMatrix is  Identiy Matrix\n\n");
+	}
+}
+
+
+
