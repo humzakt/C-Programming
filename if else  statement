@@ -1,0 +1,34 @@
+/* Humza Khawar 
+
+ IF..ELSE
+ */
+
+#include<stdio.h>
+
+int main() 
+{
+			// variable declaration & initialization
+	int j = 4;
+	int k;
+	k = j * 4 % 5;
+	int min = k;
+
+			//checking greater number
+	
+	if (j < k)
+	{
+		//if j is less than k				
+		min = j;
+		printf("j is smaller than k\n");
+	}
+	else
+		//if k is less than j
+		printf("j is larger than or equal to k \n");
+
+	//final print statement to print minimum number
+	printf("min = %d \n", min);
+	return 0;
+	
+	getchar();
+	return 0;
+}
