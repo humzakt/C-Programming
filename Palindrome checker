@@ -1,0 +1,61 @@
+/*
+		Humza Khawar 
+		Palindrome checker
+
+*/
+
+#include<stdio.h>
+
+int Reverse(int );	//this function reverses the number
+int Palindrome_checker(int );	//this function checks if reverse is equal to the actual number(Palindrome)
+int Last_Digit(int);	//this function calculates last digit
+
+
+int main() 
+{
+	int x;
+	printf("\n Enter Number : ");//input number
+	scanf_s("%d", &x);
+	if (Palindrome_checker(x)==1)
+	{
+		printf(" \n The Number \"%d\" is a  Palindrome",x); //printing result
+	}
+	else
+	{
+		printf(" \n The Number \"%d\" is not a  Palindrome", x);
+	}
+	return 0;
+}
+
+int Reverse(int x)
+{
+	int reverse_digit=0;
+	while (x != 0)
+	{
+		
+		reverse_digit = (reverse_digit * 10)+ Last_Digit(x);//calculate last digit using both functions
+		x = x / 10;
+	}
+	return reverse_digit;
+}
+
+int Palindrome_checker(int x)
+{
+		int result;
+	if (x == Reverse(x))
+		result = 1;
+	else
+	{
+		result = 0;
+	}
+	return result;
+}
+int Last_Digit(int x)
+{
+	int last_digit = x % 10;
+	return last_digit;//calculate last digit
+}
+
+
+
+
