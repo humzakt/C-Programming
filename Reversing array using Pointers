@@ -1,0 +1,73 @@
+
+/*	
+		Humza KHawar 
+		Lab Task
+		Reversing Arrays using Pointors
+*/
+
+#include<stdio.h>
+
+void Input_Function(int*, int);		//Function to take input using pointors
+void Reverser(int*, int);
+void Output_Function(int*, int);	//Function to print output using pointors
+
+
+void main()
+{
+	//initiallization
+	int arr_main[100] = { 0 }, numbers;
+
+	//taking the number of elements from user
+		printf("\nEnter Number of elements : ");
+		scanf("%d", &numbers);
+	//passing adress of array to input function
+	Input_Function(arr_main, numbers);
+
+	//passing adress of array to output function
+	Output_Function(arr_main, numbers);
+
+
+	printf("\nReversing Your Array");
+	//reversing the array
+	Reverser(arr_main, numbers);
+	Output_Function(arr_main, numbers);
+
+}
+
+
+void Input_Function(int* arr,int  n) {
+	//loop to take input
+	for (int i = 0; i < n; i++)
+	{
+		printf("\n Enter Number %d : ", i + 1);
+		scanf("%d", arr + i);
+	}
+}
+
+
+void Output_Function(int* arr, int  n) {
+	//loop to print output input
+	printf("\n Your Array is : ");
+	for (int i = 0; i < n; i++)
+	{
+		printf(" %d ", *(arr + i));
+
+	}
+
+}
+
+void Reverser(int* arr, int n)
+{	//swapping first and last elements
+	int* first = arr;
+	int* last = arr + (n - 1);
+	while (first < last)
+	{
+		int temp = *first;
+		*first = *last;
+		*last = temp;
+		first++;
+		last--;
+	}
+
+
+}
