@@ -1,0 +1,53 @@
+
+/*
+		Humza Khawar 
+		Finding Sum of Right Diagonals
+
+*/
+#include<stdio.h>
+
+void main()
+{
+		
+	//initialization of array
+	int matrix[10][10] = { 0 },size,sum_of_diagonals=0;
+	//inputing size
+	printf("\n Enter he size of the Square Matrix: ");
+	scanf("%d",&size);
+	//inputing elements of matrix
+
+		for (int i = 0; i < size; i++)
+		{
+				for (int j = 0; j < size; j++)
+				{
+					printf("\nEnter Number [%d] [%d]: ", i, j);
+					scanf("%d", &matrix[i][j]);
+				}
+		}
+	//printing the matrix
+	printf("\nYour Matrix\n");
+
+		for (int i = 0; i < size; i++)
+		{
+			printf("\n |");
+			for (int j = 0; j < size; j++)
+			{
+				printf(" %3d ", matrix[i][j]);
+			}
+			printf(" |");
+		}
+	//taking sum or right diagonals
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				if ((i + j +2) == (size + 1)) {
+					sum_of_diagonals += matrix[i][j];
+				}
+
+			}
+
+		}
+		//printing sum
+		printf("\n\n Sum of Right Diagonal = %d\n\n", sum_of_diagonals);
+}
