@@ -1,0 +1,24 @@
+/*
+        Humza Khawar 
+        Printing Coordinates 
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int cord_x=0, cord_y=0; //initialization of x & y coordinates
+
+    for ( cord_x = 0; cord_x < 6; cord_x++) //outer loop for x-coordinate
+    {
+        for ( cord_y = 0; cord_y < 6 ; cord_y++) //inner loop for y-coordinate
+        {
+            printf("(%d , %d) ", cord_x, cord_y); //printing of (x,y) pair
+
+        }
+        printf("\n"); //printing new line for each next x-coordinate
+    }
+       
+    return 0;
+}
+
