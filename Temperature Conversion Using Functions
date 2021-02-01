@@ -1,0 +1,47 @@
+/*
+		Humza Khawar
+		Printing temperature through functions
+
+*/
+
+#include<stdio.h>
+
+int celsius(int temp); //this returns temperature in celsius
+int fahrenheit(int temp); //this returns temperature in fahrenheit 
+
+int main() {
+
+	printf("\nTemp(C)\t| Temp(F)|\n------------------\n");
+	
+	for (int i = 0; i <= 100 ; i+=10)
+	{
+		printf("  %3d\t|  %5d |\n", i, fahrenheit(i));
+		
+	}
+	printf("_________________|\n");
+	
+	printf("\nTemp(F)\t| Temp(C)|\n------------------\n");
+	
+	for (int j = 32; j <= 212 ; j+=10)
+	{
+		printf("  %d\t|  %5d |\n", j, celsius(j));
+	}
+	printf("_________________|\n");
+
+	return 0;
+
+}
+
+int fahrenheit(temp) {
+
+	int converted_temp = (temp*9/5)+32 ;//returns temperature in fahrenheit
+
+	return converted_temp;
+}
+int celsius(temp) {
+
+	int converted_temp = (9/5)*(temp - 32);//returns temperature in celsius
+
+	return converted_temp;
+}
+
