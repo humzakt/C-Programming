@@ -1,0 +1,35 @@
+/*
+		Humza Khawar
+		Vowel or Consonant
+*/
+
+#include<stdio.h>
+
+int vowel_checker(char);//checks if alphabet is vowel or consonant
+
+int main() 
+{	char a;
+
+	printf("\n Enter Alphabet : ");//input alphabet
+	scanf_s(" %c", &a);
+	
+	if (vowel_checker(a) ==1) //checks the alphabet
+	{
+		printf(" \n \"%c\" is a vowel. \n",a); //printing result
+	}
+	else
+	{
+		printf(" \n \"%c\" is a consonant. \n", a);
+	}
+	return 0;
+}
+
+int vowel_checker(char c)
+{
+	int result = 0;
+	if ((c=='A' || c == 'a' || c == 'E' || c == 'e' || c == 'I' || c == 'i' || c == 'O' || c == 'o' || c == 'U' || c == 'u')) //compares against all vowels
+	{
+		result=1;
+	}
+	return result;
+}
