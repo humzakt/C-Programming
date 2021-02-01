@@ -1,0 +1,70 @@
+
+/*
+		Humza Khawar 
+		Calculating Even Numbers, average, greatest Number
+		in arrays through functions 
+*/
+#include<stdio.h>
+int Even_Checker(int[]);	//function to check for even numbers by calculating factors
+int Greatest_Num_Calculator(int[]);	//function to check greatest number
+float Avg_Calculator(int[]);	//function to calculate average
+int main() 
+{
+	int  array[12] = { 0 };		//initialization of array
+
+		for (int i = 0; i < 12; i++)	//loop to take input
+		{
+			printf("\nEnter Number %d : ",i+1);	//taking numbers input in array
+			scanf("%d", &array[i]);
+		}
+
+	printf("\n Array Entries:\n");
+
+		for (int i = 0; i < 12; i++)	//loop to print array entries
+		{
+			printf("\t%2d", array[i]);	
+		}
+	printf("\n\n Total Even numbers in array = %d\n", EvenChecker(array)); //printing quantity of even numbers
+	printf("\n Average of numbers in array = %.2f\n", Avg_Calculator(array)); //printing average of numbers
+	printf("\n Greatest numbers in array = %d\n", Greatest_Num_Calculator(array)); //printing the greatest number in the array
+
+	return 0;
+}
+
+int EvenChecker(int array[]) {	//function to check for even numbers by calculating factors
+
+	int even_counter = 0;	//counter to check factors
+	for (int i = 0; i < 12; i++)	
+	{
+		if (array[i]% 2 == 0)
+		{
+			even_counter++;		//calculates factors of the number
+		}
+
+	}
+	return even_counter;
+}
+
+float Avg_Calculator(int array[]) //function to calculate average
+{
+	float  avg = 0, sum = 0;	//initialization of variables
+
+	for (int i = 0; i < 12; i++)	//loop to calculate the sum of entries in the array
+	{
+		sum += array[i];
+	}
+	avg = (sum / 12); //calculating the average of numbers
+	return avg;
+}
+
+int Greatest_Num_Calculator(int array[])	//function to check greatest number
+{
+	int greatest_num = array[0]; //initializing greatest integer variable to first array element
+	for (int i = 0; i < 12; i++)
+	{
+		if (greatest_num < array[i]) {	//comparing greatest integer variable with every array element
+			greatest_num = array[i];	//initializing greatest integer variable to the next greater number
+		}
+	}
+	return greatest_num;
+}
