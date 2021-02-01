@@ -1,0 +1,49 @@
+/*
+		Humza Khawar 
+		Printing Transpose of a matrix
+
+*/
+#include<stdio.h>
+
+void main()
+{
+		
+	//initialization of array
+	int matrix[10][10] = { 0 },size;
+      //inputting size of matrix
+	printf("\n Enter he size of the Square Matrix: ");
+	scanf("%d",&size);
+//inputting elements of matrix
+
+		for (int i = 0; i < size; i++)
+		{
+				for (int j = 0; j < size; j++)
+				{
+					printf("\nEnter Number [%d] [%d]: ", i, j);
+					scanf("%d", &matrix[i][j]);
+				}
+		}
+//printing transpose by changing rows and columns
+	printf("\nYour Matrix\n");
+
+		for (int i = 0; i < size; i++)
+		{
+			printf("\n |");
+			for (int j = 0; j < size; j++)
+			{
+				printf(" %3d ", matrix[i][j]);
+			}
+			printf(" |");
+		}
+		printf("\n\n Transpose of your Matrix\n");
+		for (int j = 0; j < size; j++)
+		{
+			printf("\n |");
+			for (int i = 0; i < size; i++)
+			{
+				printf(" %3d ", matrix[i][j]);
+			}
+			printf(" |");
+		}
+		printf("\n \n");
+}
