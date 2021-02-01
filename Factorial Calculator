@@ -1,0 +1,38 @@
+/*
+        Humza Khawar
+        Factorial calculation with "for" and "while" loop
+*/
+
+#include <stdio.h>
+int main()
+{
+    int num=-1, fact=1,counterVar;
+    while (num<0) //to input positive number for factorial
+    {
+        printf("\nEnter a positive number : ");
+        scanf_s("%d", &num);
+
+    }
+
+    //code for factorial with "for" loop
+    for (counterVar = 1; counterVar <= num; counterVar++)
+    {
+        fact *= counterVar; //calculation of factorial 
+    }
+    printf("\n(for loop) Factorial of %d is = %d", num, fact);   //printing of result
+
+    //code for factorial with while loop
+    fact = 1;
+    counterVar = 1; //condition
+    while (counterVar<=num) //while loop for factorial
+    {
+        fact *= counterVar;
+        counterVar++;
+
+    }
+
+    printf("\n(while loop) Factorial of %d is = %d\n",num, fact); //result
+        
+    return 0;
+}
+
