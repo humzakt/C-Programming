@@ -1,0 +1,58 @@
+
+
+/*
+		Humza Khawar 
+		Printing unique Elements
+
+*/
+#include<stdio.h>
+
+void main()
+{
+			//initializing the variables
+	int array1[50] = {0};
+	int unique_elements[50] = {0};
+	int num_unique_elements=0,num_of_elements1, repetition=0;
+
+
+			//taking input of arrays
+	printf("\nEnter Number Of Elements in first array : ");
+	scanf("%d", &num_of_elements1);
+
+		for (int i = 0; i < num_of_elements1; i++)
+		{
+			printf("\nEnter Number %d : ", i + 1);
+			scanf("%d", &array1[i]);
+		}
+			//calculating the repetition of every element in array
+		for (int i = 0; i < num_of_elements1; i++)
+		{
+			repetition = 0;
+
+				for (int j = 0; j < num_of_elements1; j++)
+				{
+					if ( array1[j] == array1[i] )
+					{
+						repetition++;
+					}
+				}
+			//if the element doenot repeat in the array then it is added to an array of unique element
+			if (repetition==1)
+			{
+				unique_elements[num_unique_elements] = array1[i];
+				num_unique_elements++;
+
+			}
+		}
+	
+	
+			//printing the elements	
+	printf("\nThe unique numbers are \n ");
+
+	for(int i = 0; i <(num_unique_elements); i++)
+	{
+		printf("\t %d", unique_elements[i]);
+
+	}
+	
+}
