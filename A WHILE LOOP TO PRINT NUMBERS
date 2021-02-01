@@ -1,0 +1,41 @@
+/* Humza Khawar 
+ 
+ WHILE loop to print numbers
+ */
+
+#include<stdio.h>
+
+int main() 
+{
+			//local declarations
+	int num;
+	int lineCount;
+			//Statements
+		
+			//initialization
+	printf("Enter an integer between 1 and 100 : ");
+	scanf_s("%d", &num);
+
+			//Test number
+	if (num > 100)
+		num = 100;
+	lineCount = 0;
+
+	while (num > 0)
+	{
+		if (lineCount < 10)
+			lineCount++;
+		else
+		{
+			printf("\n");
+			lineCount = 1;
+
+		}//else
+		printf("%4d", num--);
+	}//while
+	
+		
+	
+	getchar();
+	return 0;
+}
