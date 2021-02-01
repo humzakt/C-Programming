@@ -1,0 +1,31 @@
+/*
+        Humza Khawar 
+        Number Guessing Game -  With Counter
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    srand(time(0));
+    int num, guess_num=0,counter = 1;  //initialization
+    num = (rand() % 10 + 1); //storange of random number
+    
+    printf("\nI have choosen a number between 1 and 10. Try guessing it");
+
+    while (num!=guess_num) //while loop to run the proogram until the number is not equal to guessed number
+    {
+        printf("\nYour Guess : ");
+        scanf_s("%d", &guess_num);
+        if (num != guess_num) //for wrong number
+        {
+            printf("\nWrong Guess! Try Again");
+            counter++;//for calculation of tries
+        }
+    }
+    printf("\nWow! You Guessed it.");//when number is correct
+    printf("\nIt took you %d tries.\n", counter);
+
+    return 0;
+}
