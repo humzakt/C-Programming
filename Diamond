@@ -1,0 +1,46 @@
+/* Humza Khawar 
+ Diamond
+ */
+#include <stdio.h>
+int main()
+{
+    int num, space, row;
+    do
+    {
+        printf("Enter number of rows\n");//checks for odd number
+        scanf_s("%d", &num);
+
+    } while (num%2==0);
+        
+    
+    for (row = 1; row <= num/2+1 ; row++)//loop for row
+    {
+        for (space = 1; space <= num - row; space++)//loop for space
+            printf(" ");
+
+        for (space = 1; space <= 2 * row-1 ; space++)//loop for printing *
+
+            printf("*");
+
+        printf("\n");
+    }
+    
+    for (row; row <= num; row++)//loop for row
+    {
+        for (space = 1; space < row; space++)//loop for space
+        {
+            printf(" ");
+        }
+        for (space = 0; space <= 2*(num-row); space++)//loop for printing *
+        {
+            printf("*");
+        }
+
+
+        printf("\n");
+
+    }   
+
+    return 0;
+}
+
