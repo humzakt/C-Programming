@@ -1,0 +1,55 @@
+/*
+		Humza Khawar BS CS 10-C (343114)
+		Playing with numbers
+
+*/
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int Reverse(int x); //this function reverses
+int Last_Digit(int x);//this function prints last digit
+int Sum(int x);//this functions sums the digits
+
+
+
+int main() {
+	int x;
+	printf("\n Enter Number : ");
+	scanf_s("%d", &x);
+	
+
+	printf(" \n The reverse of %d is : %d",x,Reverse(x)); //printing reverse
+	printf(" \n The last digit of %d is : %d", x,Last_Digit(x));//printing last digit
+	printf(" \n The sum of digits of %d is : %d\n", x, Sum(x));//printing sum
+
+	return 0;
+}
+
+int Reverse(int x)
+{
+	int reverse_digit=0;
+	while (x != 0)
+	{
+		
+		reverse_digit = (reverse_digit * 10)+ Last_Digit(x);//calculate last digit using both functions
+		x = x / 10;
+	}
+	return reverse_digit;
+}
+
+int Last_Digit(int x)
+{
+	int last_digit = x % 10;
+	return last_digit;//calculate last digit
+}
+int Sum(int x)
+{
+	int sum = 0;
+	while (x!=0)
+	{
+		sum += (Last_Digit(x));//calculate SUM using both functions
+		x = x / 10;
+	}
+	return sum;
+}
+
