@@ -1,0 +1,37 @@
+/*
+		Humza Khawar 
+		Leap year finder
+		*/
+
+#include<stdio.h>
+
+int leap_year_checker(int);//checks year if it is a leap year or not
+
+int main() 
+{
+	int year;
+
+	printf("\n Enter Year : ");//input year
+	scanf_s("%d", &year);
+	
+	if (leap_year_checker(year) ==1) //checks the year
+	{
+		printf(" \n \"%d\" is a Leap Year. \n",year); //printing result
+	}
+	else
+	{
+		printf(" \n \"%d\" is NOT a Leap Year. \n", year);
+	}
+	return 0;
+}
+
+int leap_year_checker(int year)
+{
+	int result = 0;
+	if (((year%4==0)&& (year % 100 == 0) && (year % 400 == 0))||((year % 4 == 0)&& (year % 100 != 0))) //checks conditions of a leap year
+	{
+		result=1;
+	}
+	return result;
+
+}
