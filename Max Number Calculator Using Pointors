@@ -1,0 +1,36 @@
+
+/*
+		Humza Khawar
+		Max calculator
+		*/
+
+#include<stdio.h>
+
+int Max_Calculator(int*, int* );//calculates the max number
+int main() 
+{
+	int num1,num2;
+
+	printf("\n Enter num1 : ");//input number
+	scanf_s("%d", &num1);
+	printf("\n Enter num2 : ");//input number
+	scanf_s("%d", &num2);
+	
+	
+	printf("\nMaximum number of %d and %d  is %d \n", num1 , num2, Max_Calculator(&num1,&num2)); //Shows Maximum Number
+	
+	return 0;
+}
+
+
+int Max_Calculator(int* num1, int* num2)//Max number calculator
+{
+	if (*num1 > *num2)	//Max calculations by comparison
+	{
+		return *num1;
+	}
+	else
+	{
+		return *num2;
+	}
+}
