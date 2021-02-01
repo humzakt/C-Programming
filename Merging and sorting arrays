@@ -1,0 +1,76 @@
+
+/*
+		Humza Khawar 
+		Combining and sorting arrays in descending order
+
+*/
+#include<stdio.h>
+
+void main()
+{
+	//initializing the variables
+	int array1[50] = {0};
+	int array2[50] = { 0 };
+	int final_array[100] = { 0 };
+	int temp,num_of_elements1, num_of_elements2;
+
+
+	//taking input of arrays
+	printf("\nEnter Number Of Elements in first array : ");
+	scanf("%d", &num_of_elements1);
+	for (int i = 0; i < num_of_elements1; i++)
+	{
+		printf("\nEnter Number %d : ", i + 1);
+		scanf("%d", &array1[i]);
+	}
+	printf("\nEnter Number Of Elements in second array : ");
+	scanf("%d", &num_of_elements2);
+	for (int i = 0; i < num_of_elements2; i++)
+	{
+		printf("\nEnter Number %d : ", i + 1);
+		scanf("%d", &array2[i]);
+	}
+
+	//combining both arrays in 1 array
+	for (int i = 0; i < (num_of_elements1+num_of_elements2); i++)
+	{
+		if (i < num_of_elements1)
+		{
+			final_array[i] = array1[i];
+		}else
+		{
+			final_array[i] = array2[i - num_of_elements1];
+		}
+		
+	}
+	
+	//sorting the number in descending order by comparing it with all other numbers in the array 
+	
+	for (int i = 0; i < (num_of_elements1 + num_of_elements2); i++)
+	{
+
+		for (int j = i + 1; j < (num_of_elements1 + num_of_elements2); ++j)
+		{
+
+			if (final_array[i] < final_array[j])
+			{
+
+				temp = final_array[i];
+				final_array[i] = final_array[j];
+				final_array[j] = temp;
+
+			}
+
+		}
+
+	}	
+	//printing the elements	
+	printf("\nThe sorted numbers are \n ");
+
+	for(int i = 0; i < (num_of_elements1 + num_of_elements2); i++)
+	{
+		printf("\t %d", final_array[i]);
+
+	}
+	
+}
