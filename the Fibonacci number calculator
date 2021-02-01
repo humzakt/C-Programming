@@ -1,0 +1,63 @@
+Code:
+/*
+		Humza Khawar
+		fibonacci series
+		*/
+
+#include<stdio.h>
+
+int Rec_fibonacci(int);//calaulates fibinocci series using recursion
+int Loop_fibonacci(int);//calaulates fibinocci series using loop
+
+int main() 
+{
+	int num;
+
+	printf("\n Enter num : ");//input number
+	scanf_s("%d", &num);
+	
+	
+	printf(" \nRecursion: fibonacci( %d ) is %d \n",num, Rec_fibonacci(num));//prints the desired output through recursion function
+	printf(" \nLoop: fibonacci( %d ) is %d \n", num, Loop_fibonacci(num));//prints the desired output through loop function
+	
+	return 0;
+}
+
+int Rec_fibonacci(int num)
+{
+	{static int first_num = 0, second_num = 1, next_num; //static variables so we can keep using their values
+
+			if (num >= 2)
+			{
+
+				next_num = first_num + second_num;	//the fibonacci definition
+				first_num = second_num;
+				second_num = next_num;
+				num--;
+				Rec_fibonacci(num); //recursion
+
+
+				return next_num; //returning the result
+			}
+			else
+			{
+				return 1;
+			}
+	}
+}
+
+
+int Loop_fibonacci(int num)
+{
+	int first_num = 0, second_num = 1, fib_num = 0;//initialitzation
+
+	while (num>1)//loop to sum numbers until desired number is achieved
+	{
+		fib_num = first_num + second_num;//fibonoci formula
+		first_num = second_num;
+		second_num = fib_num;
+		--num;
+	}
+
+	return fib_num;//returning value
+}
