@@ -1,0 +1,34 @@
+/* Humza Khawar 
+
+ Calculate 20 Prime Numbers
+ */
+
+#include<stdio.h>
+
+int main() 
+{
+			//declarations
+	int counter=0, num=0, factor=0,divisor;
+	
+			//Statements
+	while (counter < 20)
+	{
+		num++;
+		factor = 0;
+		for (divisor = 1; divisor <= num; divisor++)
+		{
+			if (num % divisor == 0)
+				factor++;
+		}
+		if (factor == 2)
+		{ 
+			printf("\n %d  is Prime Number\n", num);
+			counter++;
+		}
+
+	}
+			
+	getchar();
+	return 0;
+}
+
