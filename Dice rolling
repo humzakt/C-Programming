@@ -1,0 +1,33 @@
+/*
+        Humza Khawar 
+        Dice Game - Dice Doubles
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+    srand(time(0));
+
+    int userDice, randomDice=0;  //initialization
+
+    randomDice = (rand() % 6 + 1); //storange of random number
+    printf("\nI have rolled my dice. Now roll your dice.\n");
+    do
+    {
+        printf("\nEnter Your Number : "); 
+        scanf_s("%d", &userDice);   //Input from user 
+        printf("Sum of Our Numbers is : %d", userDice + randomDice); //printing sum of numbers 
+        if (userDice!=randomDice)   //if numbers are unequal
+        {
+            printf("\nWe didnt get Doubles. Try Again!\n");
+        }
+
+    } while (userDice != randomDice);
+
+    printf("\nYAY! We got Doubles\n");//when we get doubles
+       
+    return 0;
+}
+
