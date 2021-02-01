@@ -1,0 +1,24 @@
+/*
+        Humza Khawar
+        Finding power x ^ y 
+*/
+
+#include <stdio.h>
+#include<math.h>
+
+int main()
+{
+    double num,pwr, result; //declaration of variables doubles
+
+    printf("\nEnter Number : ");   //input num
+    scanf_s("%lf", &num);
+    printf("\nEnter its power : "); //input its power
+    scanf_s("%lf", &pwr);
+    result = pow(num, pwr);     //calculation of result
+
+    printf("\nThe result of %.1lf ^ %.1lf = %.2lf \n",num,pwr,result); //output of result
+    
+       
+    return 0;
+}
+
