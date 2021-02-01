@@ -1,0 +1,52 @@
+
+/*
+		Humza Khawar 
+		factorial calculator
+		*/
+
+#include<stdio.h>
+
+int Rec_factorial(int);//calaulates factorial series using recursion
+int Loop_factorial(int);//calaulates factorial series using loop
+
+int main() 
+{
+	int num;
+
+	printf("\n Enter num : ");//input number
+	scanf_s("%d", &num);
+	
+	
+	printf(" \nRecursion: factorial( %d ) is %d \n",num, Rec_factorial(num));//prints the desired output through recursion function
+	printf(" \nLoop: factorial( %d ) is %d \n", num, Loop_factorial(num));//prints the desired output through loop function
+	
+	return 0;
+}
+
+int Rec_factorial(int num)
+{
+
+		if (num > 1)
+		{
+			return num*Rec_factorial(num-1); //returning the result of factorial through recursion
+		}
+		else
+		{
+			return 1;
+		}
+	
+}
+
+
+int Loop_factorial(int num)
+{
+	int fact = 1;//initialitzation
+
+	while (num>1)//loop to calculate factorial
+	{
+		fact *= num;
+		num--;
+	}
+
+	return fact;//returning factorial
+}
