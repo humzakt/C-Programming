@@ -1,0 +1,43 @@
+
+/*
+		Humza Khawar 
+		Calculator
+		*/
+
+#include<stdio.h>
+
+int Addition(int*, int* );//calculates addition
+int Subtraction(int*, int*);//calculates subtraction
+int Multiplication(int*, int*);//calculates multiplication
+int main() 
+{
+	int num1,num2;
+
+	printf("\n Enter num1 : ");//input number
+	scanf_s("%d", &num1);
+	printf("\n Enter num2 : ");//input number
+	scanf_s("%d", &num2);
+	
+	
+	printf("\n%d + %d  = %d \n", num1 , num2, Addition(&num1,&num2)); //outputs sum
+	printf("\n%d - %d  = %d \n", num1, num2, Subtraction(&num1, &num2)); //outputs difference
+	printf("\n%d + %d  = %d \n", num1, num2, Multiplication(&num1, &num2)); //outputs product
+	return 0;
+}
+
+
+int Addition(int* num1, int* num2)
+{
+	return *num1 + *num2;
+}
+	
+int  Subtraction(int* num1, int* num2)
+{
+	return *num1 - *num2;
+}
+int Multiplication(int* num1, int* num2)
+{
+	return *num1 * *num2;
+}
+
+
