@@ -1,0 +1,37 @@
+/*
+		Humza Khawar BS CS 10-C (343114)
+		Prime Finder through functions
+*/
+
+#include<stdio.h>
+int prime(int x); //this function finds prime number
+int main() {
+	int x,fact;
+	printf("\n Enter Number : ");
+	scanf_s("%d", &x);
+	
+	fact = prime(x);
+	if (fact == 2)
+	{
+		printf("\n %d is prime.\n", x);
+	}
+	else
+		printf("\n %d is not prime.\n", x);
+	return 0;
+	}
+
+int prime(x)
+{
+	int fact = 0;
+	for (int i = 1; i <= x; i++)
+	{
+		if (x % i == 0)
+		{
+			fact++;
+		}
+	}
+	return fact;
+	
+
+}	
+
