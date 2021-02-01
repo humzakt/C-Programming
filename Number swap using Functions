@@ -1,0 +1,32 @@
+/*
+		Humza Khawar BS CS 10-C (343114)
+		Number Swap through functions
+
+*/
+
+#include<stdio.h>
+
+void swap(int x, int y, int* swap1, int* swap2); //this function swaps the number
+
+
+int main() {
+	int x, y;
+	printf("\n Enter First Number : ");
+	scanf_s("%d", &x);
+	printf("\n Enter Second Number : ");
+	scanf_s("%d", &y);
+	swap(x, y , &x ,&y);
+
+	printf(" \n After swap \n First Number = %d , Second Number = %d\n\n", x, y);
+	return 0;
+}
+
+void swap(int x, int y , int* swap1 ,int* swap2)
+{ //c1 & c2 are a temporary variables
+	int	c1 = x, c2 = y;
+	*swap1 = c2;
+	*swap2 = c1;
+
+}
+
+
