@@ -1,0 +1,50 @@
+
+/*	
+		Humza KHawar BSCS-10-C (343114)
+		Lab Task
+		Inputting and Outputting Arrays using Pointors
+*/
+
+#include<stdio.h>
+
+void Input_Function(int*, int);		//Function to take input using pointors
+
+void Output_Function(int*, int);	//Function to print output using pointors
+
+
+void main()
+{
+	//initiallization
+	int arr[100] = { 0 }, numbers;
+
+	//taking the number of elements from user
+		printf("\nEnter Number of elements : ");
+		scanf("%d", &numbers);
+	//passing adress of array to input function
+	Input_Function(arr, numbers);
+	//passing adress of array to output function
+	Output_Function(arr, numbers);
+
+}
+
+
+void Input_Function(int* arr,int  n) {
+	//loop to take input
+	for (int i = 0; i < n; i++)
+	{
+		printf("\n Enter Number %d : ", i + 1);
+		scanf("%d", arr + i);
+	}
+}
+
+
+void Output_Function(int* arr, int  n) {
+	//loop to print output input
+	printf("\n Your Array is : ");
+	for (int i = 0; i < n; i++)
+	{
+		printf(" %d ", *(arr + i));
+
+	}
+	printf("\n\n");
+}
