@@ -1,0 +1,91 @@
+
+/*	
+		Humza KHawar
+		Lab Task
+		Comparing Matrices
+*/
+
+#include<stdio.h>
+
+
+
+void main()
+{
+	//initialization of array
+
+	int matrix1[10][10] = { 0 }, matrix2[10][10] = { 0 }, size, flag = 0;
+
+
+	//inputing size
+
+	printf("\n Enter he size of the Square Matrices: ");
+	scanf("%d", &size);
+
+	//inputing elements of matrix
+	printf("\nMatrix 1");
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				printf("\nEnter Number [%d] [%d]: ", i+1, j+1);
+				scanf("%d", &matrix1[i][j]);
+			}
+		}
+
+	printf("\nMatrix 2");
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				printf("\nEnter Number [%d] [%d]: ", i+1, j+1);
+				scanf("%d", &matrix2[i][j]);
+			}
+		}
+
+	//printing the matrix
+	printf("\nYour Matrix 1:\n");
+
+		for (int i = 0; i < size; i++)
+		{
+			printf("\n |");
+			for (int j = 0; j < size; j++)
+			{
+				printf(" %3d ", matrix1[i][j]);
+			}
+			printf(" |");
+		}
+	//printing the matrix
+	printf("\nYour Matrix 2:\n");
+
+		for (int i = 0; i < size; i++)
+		{
+			printf("\n |");
+			for (int j = 0; j < size; j++)
+			{
+				printf(" %3d ", matrix2[i][j]);
+			}
+			printf(" |");
+		}
+	//comparing each element of matrix
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				if (matrix1[i][j] != matrix2[i][j]) {
+					flag = 1; //flag is increased to 1 if any element is unequal
+				}
+			}
+		}
+
+	if (flag ==1)
+	{
+		printf("\n\nMatrices are NOT equal\n\n");
+	}
+	else
+	{
+		printf("\n\nMatrices are equal\n\n");
+	}
+}
+
+
+
