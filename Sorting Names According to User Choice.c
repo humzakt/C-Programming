@@ -1,0 +1,143 @@
+//Humza Khawar BS CS 10-C
+//FoCP
+//Sorting Names According to Choice of User
+
+
+#include<stdio.h>
+#include<ctype.h>
+
+void ascending_sort();
+void descending_sort();
+char Name_Array[10][20] = { 0 };
+char temp_array[10][20];
+void main() {
+
+	
+
+	int choice = 0;
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("\nEnter Name %d : ", i + 1);
+		scanf("%s", Name_Array[i]);
+		
+
+	}
+
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 20; j++)
+		{
+		
+			temp_array[i][j] = toupper(Name_Array[i][j]);
+			
+		
+		}
+	
+	}
+
+
+	printf("\nHow Would you like to sort them?\n1.Ascending Order\n2.Descending Order\nEnter Choice: ");
+	scanf("%d", &choice);
+
+	while (choice!=3)
+	{
+
+		switch (choice)
+		{
+		case 1:
+			ascending_sort();
+			break;
+		case 2:
+			descending_sort();
+			break;
+
+		default:
+		
+			break;
+		}
+
+		printf("\nSorted Array: ");
+		for (int i = 0; i < 10; i++)
+		{
+			printf("\n%d. %s ", i + 1, Name_Array[i]);
+
+		}
+
+		printf("\nHow Would you like to sort them?\n1.Ascending Order\n2.Descending Order\nEnter Choice: ");
+		scanf("%d", &choice);
+
+	}
+	
+
+}
+
+void ascending_sort() {
+
+	for (int j = 0; j < 9; j++) {
+
+		for (int i = 0; i < 9; i++)
+		{
+			if (strcmp(temp_array[i], temp_array[i + 1]) < 0)
+			{
+
+				continue;
+
+			}
+			else if (strcmp(temp_array[i], temp_array[i + 1]) > 0)
+			{
+				char temp_name[20];
+
+				strcpy(temp_name, temp_array[i]);
+
+				strcpy(temp_array[i], temp_array[i + 1]);
+
+				strcpy(temp_array[i + 1], temp_name);
+
+
+
+				strcpy(temp_name, Name_Array[i]);
+
+				strcpy(Name_Array[i], Name_Array[i + 1]);
+
+				strcpy(Name_Array[i + 1], temp_name);
+			}
+		}
+	}
+	
+}
+void descending_sort() {
+
+	for (int j = 0; j < 9; j++) {
+
+		for (int i = 0; i < 9; i++)
+		{
+			if (strcmp(temp_array[i], temp_array[i + 1]) > 0)
+			{
+
+				continue;
+
+			}
+			else if (strcmp(temp_array[i], temp_array[i + 1]) < 0)
+			{
+				char temp_name[20];
+
+				strcpy(temp_name, temp_array[i]);
+
+				strcpy(temp_array[i], temp_array[i + 1]);
+
+				strcpy(temp_array[i + 1], temp_name);
+
+
+
+				strcpy(temp_name, Name_Array[i]);
+
+				strcpy(Name_Array[i], Name_Array[i + 1]);
+
+				strcpy(Name_Array[i + 1], temp_name);
+			}
+		}
+	}
+
+}
