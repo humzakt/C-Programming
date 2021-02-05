@@ -1,0 +1,125 @@
+
+//Humza Khawar
+
+//binary search
+
+
+#include<stdio.h>
+#include<ctype.h>
+#include<time.h>
+#include <string.h>
+
+void ascending_sort();
+int binarySearch(int, int, char*);
+char Name_Array[50][20] = { 0 };
+
+void main() {
+
+	int n = sizeof(Name_Array) / sizeof(Name_Array[0]);
+	int choice = 0;
+	char x[sizeof(Name_Array[0])];
+	
+	for (int i = 0; i < 50; i++)
+	{
+		printf("\nEnter Name %d : ", i + 1);
+		scanf("%s", Name_Array[i]);
+
+
+	}
+
+
+	for (int i = 0; i < 50; i++)
+	{
+		for (int j = 0; j < 20; j++)
+		{
+
+			Name_Array[i][j] = toupper(Name_Array[i][j]);
+
+
+		}
+
+	}
+
+
+	ascending_sort();
+
+	printf("\nEnter Name to search: ");
+	scanf("%s", x);
+	for (int j = 0; j < sizeof(Name_Array[0]); j++)
+	{
+
+		x[j] = toupper(x[j]);
+
+
+	}
+	
+	double begin = clock();
+	int result = binarySearch(0, n - 1, x);
+	double end = clock();
+	
+	printf("\nName is at %d index.", result);
+
+	printf("\nTime measured: %f seconds.\n", (double)(end - begin)/ CLOCKS_PER_SEC);
+}
+
+
+void ascending_sort() {
+
+	for (int j = 0; j < 49; j++) {
+
+		for (int i = 0; i <49; i++)
+		{
+			if (strcmp(Name_Array[i], Name_Array[i + 1]) < 0)
+			{
+
+				continue;
+
+			}
+			else if (strcmp(Name_Array[i], Name_Array[i + 1]) > 0)
+			{
+				char temp_name[20];
+
+
+
+
+				strcpy(temp_name, Name_Array[i]);
+
+				strcpy(Name_Array[i], Name_Array[i + 1]);
+
+				strcpy(Name_Array[i + 1], temp_name);
+			}
+		}
+	}
+
+}
+int binarySearch(int l, int r, char x[sizeof(Name_Array[0])])
+{
+	if (r >= l) {
+		int mid = l + (r - l) / 2;
+
+		// If the element is present at the middle 
+		// itself 
+		if ((strcmp(Name_Array[mid], x) == 0)) {
+			return mid;
+		}
+
+
+		// If element is smaller than mid, then 
+		// it can only be present in left subarray 
+
+		if ((strcmp(Name_Array[mid], x) > 0)) {
+
+			return binarySearch(l, mid - 1, x);
+
+
+		}
+
+		// Else the element can only be present 
+		// in right subarray 
+		return binarySearch(mid + 1, r, x);
+	}
+
+	// We reach here when element is not 
+	// present in array 
+	return -1;
+}
